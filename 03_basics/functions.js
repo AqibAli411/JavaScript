@@ -77,6 +77,7 @@ one();
 
 //note these type of function declaration
 const addOne = function(num){
+    console.log(this)   //this refers to the current object
     return num+1;
 }
 
@@ -88,6 +89,37 @@ console.log(addOne(2))
 console.log(addTwo(2));
 
 function addTwo(num){
+    // console.log(this);  //this : refers to the current object,therfore the statement prints whole object data
     return num+2;
 }
 
+// console.log(this)    output is empty brackets
+//this is also dependent on the enviroment being used , for example same code in chorme gives diffrenet output
+
+const arrowFunction = (name) => {
+    console.log(
+        `hello my name is : ${name}`
+    );
+    // console.log(this)   //this here gives empty curly brackets
+}
+
+arrowFunction("alok");
+
+//we can also return implicitly 
+
+//(a , b) => a+b;     //this is arrow function but how would u call it
+
+const summation = (a , b) => a+b;    //this returns implicitly
+
+console.log(summation(4,5))
+
+//An Immediately Invoked Function Expression (IIFE) in JavaScript is a function that is executed immediately 
+// after it is defined
+
+// (function() {
+//     console.log("Hello, World!");
+// })();
+
+// (function(name) {
+//     console.log("My name is " + name);
+// })("Aqib");

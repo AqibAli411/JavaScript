@@ -88,6 +88,7 @@ const car = {
     speed : 140
 }
 //we can short hand the identifier name for gears
-const {gears : g} = car;
+const {gears : g} = car
 
 console.log(g);
+
