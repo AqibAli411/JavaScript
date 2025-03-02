@@ -1,7 +1,9 @@
 // important math functions are present in Math object
 //Math.random() gives values between 0 and 1
+
 //generates any number between 1 and 10
 let numInFloat = (Math.random()*10) + 1
+
 //converts the number into integer
 //we can also use methods like trunc, round...
 let numInInteger = Math.floor(numInFloat)

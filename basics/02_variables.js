@@ -13,6 +13,7 @@ It is better and advisible to use let than var
 
 */
 
+//const thing cannot be changed
 const gpa = 3.25;
 let age = 19;
 let nameOfStudent = "Aqib";

@@ -10,6 +10,7 @@ console.log(numInIntForm);
 /*
 
 Note that:
+while converting to the number
 **numeric converstions**
 undefined, Irregular String is converted into NAN
 null to 0
@@ -22,7 +23,7 @@ example:
 undefined , null , empty strings and Nan => false
 other wise => true
 
-Note : nan stands for not a number
+Note : nan stands for "not a number"
 
 */
 

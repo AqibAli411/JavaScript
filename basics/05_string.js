@@ -16,4 +16,5 @@ console.log(x1);
 
 //this is object string
 // let x1 = new String("aqib")
+//this will change when its refrence varibale is changed
 
