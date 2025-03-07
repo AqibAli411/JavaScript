@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const element = document.createElement('div');
+    console.log(element);
+    element.className = "freash-div";
+    element.id = Math.round(Math.random()*10 + 1);
+    element.setAttribute("title","The Dark Night");
+    element.style.color = "black";
+    element.style.padding = "10px";
+    // element.innerText = "This is new dev";
+    const add = document.createTextNode("Chai or code");
+    element.appendChild(add);
+    element.style.backgroundColor = 'green';
+    
+    //appending the total element in the document object in the body section
+    document.body.appendChild(element);
+
+    
+
+</script>
+</html>
+

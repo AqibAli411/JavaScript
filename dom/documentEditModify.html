@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Element</title>
+</head>
+<body>
+    
+    <ul class = "language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+
+    function Addlanguage (language){
+        const element = document.createElement('li');
+        element.innerHTML = `${language}`;
+        document.querySelector('.language').appendChild(element);
+    }
+
+    Addlanguage("python");
+    Addlanguage("c++");
+
+    //more optimized approch
+    
+    function AddOptilanguage (language){
+        const element = document.createElement('li');
+        // element.innerHTML = `${language}`;
+        const addText = document.createTextNode(language);
+        element.appendChild(addText);
+
+        document.querySelector('.language').appendChild(element);
+    }
+
+    AddOptilanguage("go lang");
+
+    //edit
+    const secondLang = document.querySelector('li:nth-child(2)');
+    // secondLang.innerHTML  = "mojo";  //not a good practice
+    const addtext = document.createTextNode("mojo");
+
+    const newLang = document.createElement('li');
+    newLang.textContent = 'Mojo';   //new way of doing same as inner html
+
+    // newLang.appendChild(addtext); -> this will also work
+
+    secondLang.replaceWith(newLang)
+
+    //edit using outer html
+    const firstLang = document.querySelector('li:first-child');
+    firstLang.outerHTML = '<li> Typescript </li>';
+
+
+    //to remove it we have
+    const lastlang = document.querySelector('li:last-child');
+    lastlang.remove();
+
+</script>
+
+</html>

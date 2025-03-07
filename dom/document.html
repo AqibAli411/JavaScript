@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="Parent">    
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div> 
+        <div class="day">Friday</div> 
+    </div>
+    
+</body>
+    <script>
+        const parent = document.querySelector('.Parent');
+        // console.log(parent);
+        // console.log(parent.children);
+        // console.log(parent.children[1].innerText);
+        const children = parent.children;
+        
+        // for (let index = 0; index < children.length; index++) {
+        //     const element = children[index];
+        //     console.log(element.innerText); //prints all the text in the children
+        // }
+
+        parent.children[1].style.color = 'green';
+        // console.log(parent.firstElementChild.innerHTML)
+        // console.log(parent.lastElementChild.innerHTML)
+
+        //we can also go from child to parent : 
+        const dayone = document.querySelector('.day');
+        // console.log(dayone.innerHTML);  //output: monday
+        // console.log(dayone.parentElement.children[3].innerHTML);  //output: gives the parent class
+        // console.log(dayone.nextElementSibling.innerHTML); //output: gives next
+
+        console.log('child node : ',parent.childNodes);
+
+    </script>
+
+</html>
