@@ -10,7 +10,7 @@ function random(){
     return color;
 }
 
-  //buttons for starting and ending
+//buttons for starting and ending
 const startButton = document.querySelector('#start');
 const stopButton = document.querySelector('#stop');
 let interval = null;
@@ -22,13 +22,11 @@ const startButtonInterval = function(){
   
     const changeBackround =function(){
       document.body.style.backgroundColor = random();
-      console.log('lastTime') 
     }
     interval = setInterval(changeBackround,1000);       
 }
   
 const stopButtonInterval = function(){
-  console.log("clicked")
   clearInterval(interval);
   interval = null;
   startButton.disabled = false; 
