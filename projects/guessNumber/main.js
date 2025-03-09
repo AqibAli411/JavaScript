@@ -37,6 +37,7 @@ function disableGame() {
 }
 
 function addRestartButton() {
+  //checking if not already exits
   if (!document.querySelector('#restartButton')) {
     const restartBtn = document.createElement('button');
     restartBtn.id = 'restartButton';

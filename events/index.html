@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <div id="parent" style="padding: 20px; background-color: lightblue;">
+        Parent
+        <button id="child1" style="margin: 10px;">Click Me</button>
+        <button id="child2" style="margin: 10px;">Click Me</button>
+        <button id="child3" style="margin: 10px;">Click Me</button>
+    </div>
+
+    <ul class = "ul">
+        <div class="li1"> <button> List item 1 </button></div>
+        <div class="li2"><button> List item 2 </button></div>
+        <div class="li3"><button> List item 3 </button></div>
+        <div class="li4"><button> List item 4 </button></div>
+        <div class="li5"><button> List item 5 </button></div>
+    </ul>
+      
+</body>
+
+<script>
+    // -----------------------------Event Bubbling-----------------------------------
+    // document.getElementById('child').addEventListener('click',function(){
+    //     alert('Hey , clicked on child!');
+    // })
+
+    //after i have clicked on child , the parent event automatically runs 
+    // this is known tobe eventBubbling ie , 
+    // the event starts from the inner most child and then move outer to parent
+
+    // document.getElementById('parent').addEventListener('click',function(){
+    //     alert('Hey , clicked on parent');
+    // })
+
+
+    // -----------------------------Event Capturing (trickling)-----------------------------------
+    // document.getElementById("child").addEventListener("click", function () {
+    //     alert("Child Clicked!");
+    // });
+
+    // document.getElementById("parent").addEventListener("click", function (e) {
+    //     e.stopImmediatePropagation();
+    //     alert("Parent Clicked First!");
+    // },true);  
+    // `true` enables capturing mode
+
+
+    //by passing true as a third parameter we enable capturing mode ie,
+    //The event moves from parent to child (opposite of bubbling).
+
+    //to stop bubbling we use .stopPropagation() inside the child (first elment tobe run)
+    //to stop capturing we use .stopPropagation() inside the parent
+    //basically we want to stop further propagation
+
+    //when event happens an event object (e) is passed to the function
+    //this contains the details about the event that are dependent on the type of event:
+    // click , submit , 
+
+
+    //.preventDefault() -> stops the elments default behavior that is if a link element has a addEventListener
+    // and you haven't added a prevent statement then it will keep opening the link itself
+
+    //to remove it
+
+    document.querySelector('#parent').addEventListener('click',function(e){
+        if(e.target.tagName === 'BUTTON'){
+            e.target.remove();
+        }
+    })
+
+    document.querySelector('.ul').addEventListener('click',function(e){
+        // alert(e.target.parentNode);
+        //e.target will give the button not the li , that is tobe removed
+        e.target.parentNode.remove() 
+        // e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+        // we get li by (e.target.parentNode) , then we find its parent that is ul
+        // then we removes its child that is same e.target.parentNode
+    })
+
+</script>
+
+</html>

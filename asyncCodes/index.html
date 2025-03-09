@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async</title>
+</head>
+<body>
+
+    <h1 class="heading"> This is an Information Page</h1>
+    <button class="button">Stop</button>
+</body>
+
+<script>
+    
+    // const addText = function () {
+    //     document.querySelector('.heading').innerHTML = "Changed";
+    //     console.log('successfull');       
+    // };
+
+    // const timeOut = setTimeout(addText,2000);
+    
+    // //in this way we can stop timer in between
+    // const buttom = document.querySelector('.button');
+    // buttom.addEventListener('click',function(){
+    //     clearTimeout(timeOut);
+    // })
+
+    const sayDate = function(str){
+        console.log(str,Date.now());
+    };
+
+    const interval = setInterval(sayDate,1000);
+
+    const button = document.querySelector('.button');
+    button.addEventListener('click',function(){
+        clearInterval(interval);
+    })
+
+    // sayDate("aqib");
+
+
+</script>
+</html>
