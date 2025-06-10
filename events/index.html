@@ -29,13 +29,15 @@
     //     alert('Hey , clicked on child!');
     // })
 
+    // document.getElementById('parent').addEventListener('click',function(){
+    //     alert('Hey , clicked on parent');
+    // })
+
     //after i have clicked on child , the parent event automatically runs 
     // this is known tobe eventBubbling ie , 
     // the event starts from the inner most child and then move outer to parent
 
-    // document.getElementById('parent').addEventListener('click',function(){
-    //     alert('Hey , clicked on parent');
-    // })
+    
 
 
     // -----------------------------Event Capturing (trickling)-----------------------------------
@@ -59,7 +61,7 @@
 
     //when event happens an event object (e) is passed to the function
     //this contains the details about the event that are dependent on the type of event:
-    // click , submit , 
+    // click , submit , etc
 
 
     //.preventDefault() -> stops the elments default behavior that is if a link element has a addEventListener
