@@ -22,6 +22,8 @@ function getData(id){
 // getData(1);
 // getData(2);
 // getData(3);
+//the problem lies in the calling itself, since call stack is never empty
+//when it is empty all the global execution is done, all three data's are ready in task queue
 //these all will run after 2 sec , but i want 1st to run after 2sec then 2nd after another 2sec (total of 4sec)
 
 //callback hell

@@ -17,13 +17,10 @@ const myPromise = new Promise((resolve, reject) => {
 });
 
 //then is used after the fullfillement of the task
-myPromise.then((result)=>{
-    console.log(result);
-})
+myPromise.then(result => console.log(result))
 
-myPromise.catch((result)=>{
-    console.log(result);
-})
+//catch is used to detect the error state
+myPromise.catch(result => console.log(result))
 
 //Promise Chain
 function getPromise(){
@@ -40,6 +37,26 @@ function getPromise(){
 // getPromise().then((res)=>{console.log(res)});
 
 //run after an interval of time
-getPromise()
-    .then(res => getPromise())
+// getPromise()
+//     .then((res) => getPromise())
+//     .then(res => console.log(res));
+
+
+
+//lets call a function that returns something
+
+function getPromise1(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("success");
+        },2000)
+    })
+}
+
+const printMessage = (res)=>{
+    return `the messege is : ${res}`;
+}
+
+getPromise1()
+    .then(res => getPromise1())
     .then(res => console.log(res));
